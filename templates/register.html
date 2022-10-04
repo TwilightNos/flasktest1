@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        #errormsg{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+{#<a href="/">Back</a>#}
+<form method="post">
+    <label for="email">Email:
+        <input type="email" name="email">
+    </label><br>
+    <label for="username">Username:
+        <input type="text" name="username">
+    </label><br>
+    <label for="password">Password:
+        <input type="password" name="password">
+    </label><br>
+    <label for="confirm_password">Confirm Password:
+        <input type="password" name="confirm_password">
+    </label><br>
+    <input type="submit" value="Register">
+</form>
+<div id="errormsg">
+{% for message in get_flashed_messages() %}
+    {{ message }}
+{% endfor %}
+</div>
+</body>
+</html>
